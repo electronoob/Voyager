@@ -32,6 +32,14 @@ Class Database {
 	function check_password ($snick, $passkey) {
 		if ($user = self::qdb_user ($snick)) {
 			/* CRYPT_BLOWFISH ? */
+                        /* allow webchat clients to transmit entire hash and salt */
+                        if ( ("$2y$" == substr($user['password'], 0, 4)) && ("$2y$" == $passkey) ) {
+                                if ($user['password'] == $passkey) {
+                                        return 1;
+                                } else {
+                                        return 0;
+                                }
+                        }
 			if ("$2y$" == substr($user['password'], 0, 4)){
 				if (password_verify($passkey, $user['password'])) {
 					return 1;
