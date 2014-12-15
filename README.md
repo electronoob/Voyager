@@ -1,4 +1,4 @@
-![IMAGE](https://bitbucket.org/ukchatters/voyager/raw/8253e5dcb69832111347599fbfa95b2530327f77/ukc.png)
+![IMAGE](https://github.com/electronoob/Voyager/blob/master/ukc.png)
 
 # Introduction to Voyager
 
